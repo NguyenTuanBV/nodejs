@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  box-sizing: border-box; }
+
+.card-courses-item {
+  margin-top: 20px; }
+
+.card-img-top {
+  height: 185px; }
+
+.card-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  /* number of lines to show */
+  line-clamp: 2;
+  -webkit-box-orient: vertical; }
+
+.card-body {
+  height: 178px; }
+
+.col-item {
+  height: 380.67px; }
