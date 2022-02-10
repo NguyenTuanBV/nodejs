@@ -3,14 +3,25 @@
         {{#each courses}}
         <div class="col-sm-6 col-lg-4 col-item">
             <div class="card card-courses-item">
-            <img class="card-img-top" src="{{this.image}}" alt="{{this.name}}">
+            <a href="/courses/{{this.slug}}">
+                <img class="card-img-top" src="{{this.image}}" alt="{{this.name}}"> 
+            </a>
             <div class="card-body">
-                <h5 class="card-title">{{this.name}}</h5>
+                <a href="/courses/{{this.slug}}">
+                    <h5 class="card-title">{{this.name}}</h5>
+                </a>
                 <p class="card-text">{{this.description}}</p>
-                <a href="#" class="btn btn-primary">Học ngay</a>
+                <a href="/courses/{{this.slug}}" class="btn btn-primary">Học ngay</a>
             </div>
             </div>
         </div>
         {{/each}}
     </div>
 </div>
+<div>
+    <hr>
+</div>
+
+<footer>
+    <h2>footer</h2>
+</footer>

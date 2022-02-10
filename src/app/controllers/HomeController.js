@@ -1,24 +1,26 @@
 const Course = require('../models/CourseMod');
-// const {mutipleMongooseToObject} = require('../../util/mongoose');
+const {mutipleMongooseToObject} = require('../../util/mongoose');
 class HomeController {
 
-    index(req, res){
-        // Course.find({})
-        //     .then(courses => {
-        //         // res.render('home', {
-        //         //     courses: mutipleMongooseToObject(courses)})
-        //         courses = courses.map(course => course.toObject())
-        //         res.render('home', {courses})
-        //     })
-        //     .catch(next);
-        Course.find({}, function(err, courses){
-            if(!err) {
-                res.json(courses);
-            }
-            else{
-                res.status(400).json({error: 'ERROR!!!'});
-            }
-        })
+    index(req, res, next){
+        Course.find({})
+            .then(courses => {
+                // res.render('home', {
+                //     courses: mutipleMongooseToObject(courses),
+                // });
+                courses = courses.map(course => course.toObject())
+                res.render('home', {courses})
+            })
+            .catch(next);
+
+        // Course.find({}, function(err, courses){
+        //     if(!err) {
+        //         res.json(courses);
+        //     }
+        //     else{
+        //         res.status(400).json({error: 'ERROR!!!'});
+        //     }
+        // })
     }
 
     create(req,res){
@@ -46,7 +48,7 @@ class HomeController {
     update(req, res){
         Course.findByIdAndUpdate(req.params.id,req.body, function(err, courses){
             if(!err){
-                res.status(200).send({message: 'update thành công'});
+                res.json(courses);
             }
             else{
                 res.status(400).json({error: 'ERROR!!!'});

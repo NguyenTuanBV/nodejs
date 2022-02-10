@@ -5,6 +5,7 @@ const Course = new Schema({
     name: {type: String, maxLength: 500},
     description: {type: String, maxLength: 500},
     image: {type: String, maxLength: 500},
+    slug: {type: String, maxlength: 500},
     createAt: {type: Date, default: Date.now},
     updateAt: {type: Date, default: Date.now},
 });
