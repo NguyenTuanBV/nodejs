@@ -3,9 +3,10 @@ const router = express.Router();
 
 const homeController = require('../app/controllers/HomeController')
 
+
 router.get('/course', homeController.searchCourse)
 
-router.post('/create', homeController.create)
+// router.post('/create', homeController.create)
 
 router.get('/:id', homeController.getId)
 

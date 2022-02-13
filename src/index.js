@@ -25,11 +25,14 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 app.use(express.urlencoded());
-
+app.use(express.json())
+app.use(express.urlencoded({ extended: true })) 
 
 app.engine('hbs', hbs.engine);
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'resource','views'));
+app.use(express.static(path.join(__dirname, '/resource/views')));
+
 console.log(__dirname)
 
 route(app);

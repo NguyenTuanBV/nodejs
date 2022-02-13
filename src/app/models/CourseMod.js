@@ -1,13 +1,19 @@
 const mongoose = require('mongoose');
+
+const slug = require('mongoose-slug-generator');
+mongoose.plugin(slug);
+
 const Schema = mongoose.Schema;
 
 const Course = new Schema({
-    name: {type: String, maxLength: 500},
+    name: {type: String, maxLength: 500, require: true},
     description: {type: String, maxLength: 500},
     image: {type: String, maxLength: 500},
-    slug: {type: String, maxlength: 500},
-    createAt: {type: Date, default: Date.now},
-    updateAt: {type: Date, default: Date.now},
+    videoId: {type: String, maxLength: 500, required: true},
+    level: {type: String, maxLength: 500},
+    slug: { type: String, slug: 'name', unique: true}
+},{
+    timestamps: true,
 });
 
 module.exports = mongoose.model('Course', Course);

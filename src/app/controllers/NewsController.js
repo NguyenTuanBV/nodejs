@@ -3,15 +3,16 @@ const New = require('../models/NewMod')
 class NewsController {
 
     index(req, res){
-        New.find({}, function(err, news){
-            if(!err) {
-                res.json(news);
-            }
-            else{
-                res.status(400).json({error: 'ERROR!!!'});
-            }
+        // New.find({}, function(err, news){
+        //     if(!err) {
+        //         res.json(news);
+        //     }
+        //     else{
+        //         res.status(400).json({error: 'ERROR!!!'});
+        //     }
             
-        })
+        // })
+       
     }
 
     create(req,res){

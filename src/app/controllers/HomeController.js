@@ -80,6 +80,9 @@ class HomeController {
         })
 
     }
+    create(req, res, next){
+        res.render('/create');
+    }
 }   
 
 module.exports = new HomeController;
