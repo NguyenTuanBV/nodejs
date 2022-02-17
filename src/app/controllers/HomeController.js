@@ -1,26 +1,31 @@
 const Course = require('../models/CourseMod');
 const {mutipleMongooseToObject} = require('../../util/mongoose');
+const { response } = require('express');
 class HomeController {
 
     index(req, res, next){
-        Course.find({})
-            .then(courses => {
-                // res.render('home', {
-                //     courses: mutipleMongooseToObject(courses),
-                // });
-                courses = courses.map(course => course.toObject())
-                res.render('home', {courses})
-            })
-            .catch(next);
+        res.setHeader("Access-Control-Allow-Origin", "*");
+        // Course.find({})
+        //     .then(courses => {
+        //         // res.render('home', {
+        //         //     courses: mutipleMongooseToObject(courses),
+        //         // });
+        //         courses = courses.map(course => course.toObject())
+        //         res.render('home', {courses})
+        //     })
+        //     .catch(next);
 
-        // Course.find({}, function(err, courses){
-        //     if(!err) {
-        //         res.json(courses);
-        //     }
-        //     else{
-        //         res.status(400).json({error: 'ERROR!!!'});
-        //     }
-        // })
+
+
+        Course.find({}, function(err, courses){
+            if(!err) {
+                res.json(courses);
+            }
+            else{
+                res.status(400).json({error: 'ERROR!!!'});
+            }
+        })
+
     }
 
     create(req,res){
@@ -48,7 +53,7 @@ class HomeController {
     update(req, res){
         Course.findByIdAndUpdate(req.params.id,req.body, function(err, courses){
             if(!err){
-                res.json(courses);
+                res.status(200).send({message: 'update thành công'});
             }
             else{
                 res.status(400).json({error: 'ERROR!!!'});
@@ -80,9 +85,9 @@ class HomeController {
         })
 
     }
-    create(req, res, next){
-        res.render('/create');
-    }
+    // create(req, res, next){
+    //     res.render('/create');
+    // }
 }   
 
 module.exports = new HomeController;

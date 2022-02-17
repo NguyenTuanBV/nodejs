@@ -1,0 +1,70 @@
+<div>
+    <div class="header">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="margin: 0;">
+            {{!-- <a class="navbar-brand" href="/">TTC education</a> --}}
+            <a href="/">
+                <img class="ft-logo" src="../img/f8_icon.png" alt="f8">
+            </a>
+            
+            <p style="display: flex; color: white; align-items: center; justify-content: center; margin-bottom: 0;">Học để đi làm</p>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/news">Tin tức lập trình</a>
+                    </li>
+                </ul>
+    
+            </div>
+        </nav>
+    </div>
+</div>
+
+
+
+    <div class="main-news"
+        style="display: flex; justify-content: center; text-align: center; margin-top: 30px;"
+    >
+        <div>
+            <h2 class="title-news">{{news.title}}</h2>
+            <div style="margin-top: 20px; margin-bottom: 20px;">
+                <img src="{{news.image}}" alt="{{news.title}}">
+            </div>
+           
+            <p class="content-news">{{news.description}}</p>
+        </div>
+    </div>
+
+
+<footer>
+    <div class="main-footer">
+        <div class="ft-left">
+            <div class="ft-title-left">
+                <img class="ft-logo" src="../img/f8_icon.png" alt="f8">
+                <h4 style="margin-bottom: 0;align-items: center;
+                    justify-content: center;
+                    display: flex;">Học để đi làm</h4>
+            </div>
+            <ul>
+                <li>Email: contact@fullstack.edu.vn</li>
+                <li>Địa chỉ: Nhà D9, lô A10, Nam</li>
+                <li>Trung Yên, Trung Hòa, Cầu Giấy, Hà Nội</li>
+            </ul>
+        </div>
+        <div class="ft-right">
+            <div class="ft-title-right">
+                <h4>Đơn vị chủ quản</h4>
+            </div>
+            <ul>
+                <li>Mã số doanh nghiệp: 0108721536</li>
+                <li>Ngày thành lập: 03/05/2019</li>
+                <li>Nơi cấp: Sở kế hoạch và đầu tư TP Hà Nội</li>
+            </ul>
+        </div>
+    </div>
+    
+</footer>

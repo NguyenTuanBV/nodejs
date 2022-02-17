@@ -1,27 +1,149 @@
-<div class="main">
-<div class="mt-4">
-    <div class="row">
-        {{#each courses}}
-        <div class="col-sm-6 col-lg-4 col-item">
-            <div class="card card-courses-item">
-            <a href="/courses/{{this.slug}}">
-                <img class="card-img-top" src="{{this.image}}" alt="{{this.name}}"> 
-            </a>
-            <div class="card-body">
-                <a href="/courses/{{this.slug}}">
-                    <h5 class="card-title">{{this.name}}</h5>
-                </a>
-                <p class="card-text">{{this.description}}</p>
-                <a href="/courses/{{this.slug}}" class="btn btn-primary">Học ngay</a>
+<div>
+    <div class="header">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="margin: 0;">
+            {{!-- <a class="navbar-brand" href="/">TTC education</a> --}}
+            <img class="ft-logo" src="../img/f8_icon.png" alt="f8">
+            <p style="display: flex; color: white; align-items: center; justify-content: center; margin-bottom: 0;">Học để đi làm</p>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/news">Tin tức lập trình</a>
+                    </li>
+                </ul>
+    
             </div>
-            </div>
-        </div>
-        {{/each}}
+        </nav>
     </div>
 </div>
-</div>
 
-<div>
-    <hr>
-</div>
+<!--slide-->
+<section class="slider owl-carousel owl-theme">
+    <div class="slider-item slider-item-one">
+        
+    </div>
+    <div class="slider-item slider-item-two">
+        
+    </div>
+    <div class="slider-item slider-item-three">
+        
+    </div>
+</section>
+<!--end slide-->
 
+<div class="main">
+    
+    <div class="container">
+        <div class="row" id="courses">
+            {{!-- {{#each courses}}
+            <div class="col-sm-8 col-lg-4 col-item">
+                <div class="card card-courses-item">
+                    <a href="/courses/{{this.slug}}">
+                        <img class="card-img-top" src="{{this.image}}" alt="{{this.name}}"> 
+                    </a>
+                
+                <a href="/courses/{{this.slug}}" class="title-learn">
+                    <h6 style="margin-bottom: 0;">Học ngay</h6>
+                </a>
+                <div class="card-body">
+                    <a href="/courses/{{this.slug}}">
+                        <h5 class="card-title">{{this.name}}</h5>
+                    </a>
+                    <p class="card-text">{{this.description}}</p>
+                   
+                </div>
+                </div>
+            </div>
+            {{/each}} --}}
+        </div>
+    </div>
+</div>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+ <script src="/js/owl.carousel.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.owl-carousel').owlCarousel({
+            loop: true,
+            margin: 10,
+            nav:true,
+            autoplay: true,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                300: {
+                    items: 1
+                },
+                1000: {
+                    items: 1
+                }
+            }
+        })
+    });
+    
+</script>
+<footer>
+    <div class="main-footer">
+        <div class="ft-left">
+            <div class="ft-title-left">
+                <img class="ft-logo" src="../img/f8_icon.png" alt="f8">
+                <h4 style="margin-bottom: 0;align-items: center;
+                    justify-content: center;
+                    display: flex;">Học để đi làm</h4>
+            </div>
+            <ul>
+                <li>Email: contact@fullstack.edu.vn</li>
+                <li>Địa chỉ: Nhà D9, lô A10, Nam</li>
+                <li>Trung Yên, Trung Hòa, Cầu Giấy, Hà Nội</li>
+            </ul>
+        </div>
+        <div class="ft-right">
+            <div class="ft-title-right">
+                <h4>Đơn vị chủ quản</h4>
+            </div>
+            <ul>
+                <li>Mã số doanh nghiệp: 0108721536</li>
+                <li>Ngày thành lập: 03/05/2019</li>
+                <li>Nơi cấp: Sở kế hoạch và đầu tư TP Hà Nội</li>
+            </ul>
+        </div>
+    </div>
+    
+</footer>
+
+<script>
+        $.ajax({
+            type: "GET",
+            url: "http://localhost:3000/",
+            dataType: 'json',
+            success: function (data) {
+                var a = "";
+                for (var i = 0; i < data.length; i++) {
+                    a = a + `
+                    <div class="col-sm-8 col-lg-4 col-item">
+                        <div class="card card-courses-item">
+                            <a href="">
+                                <img class="card-img-top" src="${data[i].image}" alt="">
+                            </a>
+
+                            <a href="" class="title-learn">
+                                <h6 style="margin-bottom: 0;">Học ngay</h6>
+                            </a>
+                            <div class="card-body">
+                                <a href="">
+                                    <h5 class="card-title">${data[i].name}</h5>
+                                </a>
+                                <p class="card-text">${data[i].description}</p>
+
+                            </div>
+                        </div>
+                    </div>`;
+                }
+                $('#courses').html(a);
+            }
+        })
+    </script>

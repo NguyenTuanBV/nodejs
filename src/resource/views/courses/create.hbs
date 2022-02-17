@@ -6,10 +6,13 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
+   
+
     <title>Admin</title>
 
     <!-- Custom fonts for this template-->
     <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="./assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
@@ -20,9 +23,9 @@
 
 
 
-<body id="page-top">
-
-    <!-- Page Wrapper -->
+<div id="page-top">
+    <div class="main">
+        <!-- Page Wrapper -->
     <div id="wrapper">
 
         <!-- Sidebar -->
@@ -56,7 +59,7 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#">
+                <a class="nav-link collapsed" href="/me/stored/courses">
                   <i class="fas fa-fw fa-book-open"></i>
                     <span>Khóa học</span>
                 </a>
@@ -105,46 +108,22 @@
 
                     <!-- Topbar Search -->
                     
-
+                    <h3>Đăng khóa học</h3>
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
 
-                       
-
-
                         <div class="topbar-divider d-none d-sm-block"></div>
-
-                        <!-- Nav Item - User Information -->
-                        <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Admin</span>
-                                <img class="img-profile rounded-circle"
-                                    src="../courses/assets/img/undraw_profile.svg">
+                        <li class="nav-item dropdown no-arrow" style="width: 200px; display: flex;justify-content: center;">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false" style="color: black;">
+                                Admin
                             </a>
-                            <!-- Dropdown - User Information -->
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Profile
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Settings
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Activity Log
-                                </a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Logout
-                                </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
                             </div>
                         </li>
-
                     </ul>
 
                 </nav>
@@ -152,7 +131,7 @@
                 <!-- Begin Page Content -->
                 <!--container-->
                 <div class="mt-4" style="margin-left: 20px;">
-                    <h3>Đăng khóa học</h3>
+                    
 
                     <form method="POST" action="/courses/store">
                          <div class="form-group">
@@ -171,7 +150,7 @@
                             <label for="level">Trình độ</label>
                             <input type="text" class="form-control" id="level" name="level">
                         </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary">Đăng khóa học</button>
                     </form>
                 </div>
                 <!-- /.container-fluid -->
@@ -194,25 +173,10 @@
         <i class="fas fa-angle-up"></i>
     </a>
 
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
-                </div>
-            </div>
-        </div>
     </div>
+    
+    <!-- Logout Modal-->
+</div> 
 
     <!-- Bootstrap core JavaScript-->
     <script src="./assets/vendor/jquery/jquery.min.js"></script>
@@ -231,5 +195,12 @@
     <script src="./assets/js/demo/chart-area-demo.js"></script>
     <script src="./assets/js/demo/chart-pie-demo.js"></script>
 
-</body>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <style>
+        .form-control{
+            width: 80%;
+        }
+    </style>
 
